@@ -1,0 +1,80 @@
+body {
+    /* overflow-y: hidden; */
+    /* Hide vertical scrollbar */
+    overflow-x: hidden;
+    /* Hide horizontal scrollbar */
+}
+
+body,
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+}
+
+#container {
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#home-header {
+    height: 120px;
+    width: 100%;
+    margin: 0;
+    background-color: pink;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+#heading {
+    margin: 0;
+}
+
+#heading h1 {
+    line-height: 0;
+    font-weight: 800;
+    color: white;
+    font-family: sans-serif;
+    font-size: 30px;
+}
+
+#search-bar {
+    height: 40px;
+    width: 400px;
+    border-radius: 50px;
+    margin-top: 20px;
+    border: solid 1px gray;
+    padding: 0 10px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+}
+
+#search-input {
+    color: white;
+    outline: none;
+    border: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: gray;
+    width: 90%;
+}
+
+#search-btn {
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+    color: pink;
+    cursor: pointer;
+}
