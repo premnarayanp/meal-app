@@ -40,7 +40,8 @@ html {
 }
 
 #favorites-meal-list {
-    height: 90%;
+    /* height: 90%; */
+    height: 80%;
     width: 100%;
     list-style: none;
     border-radius: 30px;

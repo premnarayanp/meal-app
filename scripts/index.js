@@ -74,10 +74,10 @@ function renderMealListInHome(meals) {
 
         if (favorite && favorite['meal' + mealId]) {
             button.innerText = "Remove Fav";
-            button.setAttribute('onclick', `removeFavorites(${mealId})`);
+            button.setAttribute('onclick', `removeFavorites(${mealId},'${data.strMeal}')`);
         } else {
             button.innerText = "Add   Fav";
-            button.setAttribute('onclick', `addInFavorites(${mealId})`);
+            button.setAttribute('onclick', `addInFavorites(${mealId},'${data.strMeal}')`);
         }
 
         li.appendChild(span);
@@ -94,28 +94,30 @@ function renderMealListInHome(meals) {
 }
 
 //add in my favorites
-function addInFavorites(mealId) {
+function addInFavorites(mealId, mealName) {
     let favoritesList = getFavoritesFromLocal(favoritesKey);
     let mealKey = 'meal' + mealId;
     // console.log("before fav", favoritesList);
-    favoritesList[mealKey] = true;
+    // favoritesList[mealKey] = true;
+    favoritesList[mealKey] = mealName;
     // console.log("after fav", favoritesList);
     storeFavoritesInLocal(favoritesKey, favoritesList);
 
     favBtn = document.getElementById('meal' + mealId);
-    favBtn.setAttribute('onclick', `removeFavorites(${mealId})`);
+    favBtn.setAttribute('onclick', `removeFavorites(${mealId},'${mealName}')`);
     favBtn.innerText = "Remove Fav";
 }
 
 //remove in my favorites
-function removeFavorites(mealId) {
+function removeFavorites(mealId, mealName) {
     let favoritesList = getFavoritesFromLocal(favoritesKey);
     let mealKey = 'meal' + mealId;
-    favoritesList[mealKey] = false;
+    // favoritesList[mealKey] = false;
+    favoritesList[mealKey] = mealName;
     delete favoritesList[mealKey];
 
     favBtn = document.getElementById('meal' + mealId);
-    favBtn.setAttribute('onclick', `addInFavorites(${mealId})`);
+    favBtn.setAttribute('onclick', `addInFavorites(${mealId},'${mealName}')`);
     favBtn.innerText = "Add   Fav";
     storeFavoritesInLocal(favoritesKey, favoritesList);
 }
@@ -124,6 +126,7 @@ function removeFavorites(mealId) {
 function storeFavoritesInLocal(key, favoritesList) {
     let favoritesListStr = JSON.stringify(favoritesList);
     localStorage.setItem(key, favoritesListStr);
+    console.log(favoritesList);
     //console.log("meals Stored successfully");
 }
 
