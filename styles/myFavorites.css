@@ -1,0 +1,83 @@
+/* background-color: rgb(24, 24, 58); */
+
+body {
+    overflow-y: hidden;
+    /* Hide vertical scrollbar */
+    overflow-x: hidden;
+    /* Hide horizontal scrollbar */
+}
+
+body,
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+
+#favorites-container {
+    height: 100%;
+    width: 100%;
+    padding: 0 15%;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: rgb(24, 24, 58);
+    /* background-color: pink; */
+}
+
+#favorites-container h1 {
+    font-weight: 800;
+    color: white;
+    font-family: sans-serif;
+    font-size: 30px;
+}
+
+#favorites-container ul {
+    margin-left: 0;
+    padding: 10px;
+}
+
+#favorites-meal-list {
+    height: 90%;
+    width: 100%;
+    list-style: none;
+    border-radius: 30px;
+    overflow-x: hidden;
+    background-color: white;
+}
+
+#favorites-meal-list li {
+    width: 98%;
+    min-height: 30px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    border-radius: 50px;
+    padding: 5px;
+    margin-left: 0;
+    cursor: pointer;
+    background-color: pink;
+}
+
+#favorites-meal-list li span {
+    color: gray;
+    /* color: white; */
+    font-size: 20px;
+    font-weight: 700;
+    max-width: 80%;
+}
+
+#favorites-meal-list li button {
+    height: 30px;
+    width: 100px;
+    background-color: red;
+    color: white;
+    outline: none;
+    border: 0;
+    border-radius: 20px;
+    cursor: pointer;
+}

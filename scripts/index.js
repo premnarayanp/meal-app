@@ -57,8 +57,8 @@ async function searchByFirstLetter(searchURL) {
 function renderMealListInHome(meals) {
     //let favorite = {};
     //favorites stored in localStorage  in object in key value pair
-    let favorite = getFavoritesFromLocal(favoritesKey);
 
+    let favorite = getFavoritesFromLocal(favoritesKey);
     meals.forEach((data) => {
         let li = document.createElement('li');
         let span = document.createElement('span');
@@ -117,7 +117,6 @@ function removeFavorites(mealId) {
     favBtn = document.getElementById('meal' + mealId);
     favBtn.setAttribute('onclick', `addInFavorites(${mealId})`);
     favBtn.innerText = "Add   Fav";
-
     storeFavoritesInLocal(favoritesKey, favoritesList);
 }
 
