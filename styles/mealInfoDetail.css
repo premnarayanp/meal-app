@@ -36,27 +36,38 @@ html {
 #meal-img-instruction {
     box-sizing: border-box;
     display: flex;
-    /* align-items: start;
-    text-align: start; */
-    justify-content: space-between;
-    /* height: 60%; */
-    height: 50vh;
-    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /* align-items: center; */
     margin: 0;
     background-color: pink;
-    padding: 20px;
     border-radius: 20px;
+    width: 100%;
+    /* padding: 20px; */
+    /*min-height: 60vh; */
+    padding-bottom: 20px;
 }
 
 #meal-img-instruction div {
-    height: 100%;
-    width: 45%;
     background-color: white;
     border-radius: 10px;
     padding: 5px;
     padding-top: 10px;
-    /* align-items: start; */
     text-align: start;
+    /* align-items: start; */
+    margin-top: 20px;
+}
+
+#instruction-container {
+    /* width: 65%; */
+    width: 60%;
+    min-width: 350px;
+}
+
+#meal-img-container {
+    width: 30%;
+    min-width: 350px;
+    min-height: 350px;
 }
 
 .title {
@@ -80,12 +91,12 @@ html {
 #meal-instruction {
     font-size: 15px;
     font-family: sans-serif;
-    color: rgb(1, 1, 2);
+    color: blue;
     font-weight: 700;
 }
 
 #other-info-container {
-    padding: 10px 5%;
+    padding: 10px 0;
     width: 100%;
 }
 
@@ -95,8 +106,6 @@ html {
 }
 
 #other-informationList {
-    /* min-height: 500px; */
-    /* background-color: aliceblue; */
     width: 90%;
     padding: 0 10px;
     margin-top: 0;

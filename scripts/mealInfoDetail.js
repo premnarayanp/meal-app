@@ -9,7 +9,11 @@ const mealId = params.get('mealId');
 //URL with mealId
 const URL = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`;
 
-let mealName = document.getElementById('meal-name');
+//UI var 
+const mealName = document.getElementById('meal-name');
+const mealImg = document.getElementById('meal-img');
+const mealInstruction = document.getElementById('meal-instruction');
+const otherInfoUlList = document.getElementById('other-informationList');
 
 if (mealId) {
     getMealInfoDetail(URL);
@@ -32,7 +36,7 @@ async function getMealInfoDetail(URL) {
             mealName.style = "color:red";
             return;
         }
-        // renderMealDetailOnUI(mealsDetail);
+        renderMealDetailOnUI(mealsDetail[0]);
 
     } catch (error) {
         mealName.innerText = error;
@@ -40,4 +44,11 @@ async function getMealInfoDetail(URL) {
         mealName.style = "color:red";
     }
 
+}
+
+//mealDetail on UI
+function renderMealDetailOnUI(mealDetail) {
+    mealName.innerText = mealDetail.strMeal;
+    mealImg.src = mealDetail.strMealThumb;
+    mealInstruction.innerText = mealDetail.strInstructions;
 }
