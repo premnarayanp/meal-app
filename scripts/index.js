@@ -81,19 +81,8 @@ function renderMealListInHome(meals) {
         }
         let a = document.createElement('a');
 
-        // li.appendChild(span);
-        // li.appendChild(button);
-        // mealUlList.appendChild(li);
 
-        // a.className = "results-item";
-        // a.href = `./pages/mealInfoDetail.html?mealId=${mealId}`;
-        // a.appendChild(span);
-        // a.appendChild(button);
-        // li.appendChild(a);
-        // mealUlList.appendChild(li); 
-
-        a.href = './pages/mealInfoDetail.html';
-        //a.href = `./pages/mealInfoDetail.html?mealId=${mealId}`;
+        a.href = `./pages/mealInfoDetail.html?mealId=${mealId}`;
         a.appendChild(span);
 
         li.appendChild(a);
