@@ -66,7 +66,7 @@ function renderMealDetailOnUI(mealDetail) {
 
     for (key in mealDetail) {
 
-        if (mealDetail[key] == null || mealDetail[key] == "") {
+        if (mealDetail[key] == null || mealDetail[key] == "" || mealDetail[key] == " ") {
             continue;
         }
         let name = key.slice(3);

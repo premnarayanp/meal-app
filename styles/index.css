@@ -79,22 +79,33 @@ html {
 #search-btn {
     height: 20px;
     width: 20px;
-    border-radius: 10px;
-    color: pink;
+    /* border-radius: 10px; */
+    /* color: pink; */
+    background-color: white;
+    border: 0;
+    outline: none;
     cursor: pointer;
+}
+
+#search-btn i {
+    font-size: 18px;
+    color: grey;
 }
 
 #my-favorites {
     position: absolute;
-    top: 5%;
+    top: 9%;
+    align-items: center;
+    /* font-size: 25px; */
+    height: 35px;
     right: 30px;
     border-radius: 30px;
-    background-color: rgb(243, 227, 227);
+    background-color: rgb(121, 167, 62);
 }
 
 #my-favorites a {
     color: white;
-    font-size: 0.75rem;
+    font-size: 0.80rem;
     font-family: sans-serif;
     font-weight: 800;
     text-decoration: none;

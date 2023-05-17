@@ -9,8 +9,13 @@ var oldSearch = "";
 searchInput.addEventListener('input', (e) => {
     const target = e.target;
     const value = target.value;
+    let size = value.length;
+
+    if (size == 0) {
+        return;
+    }
     const firstLetter = value.charAt(0);
-    if (!firstLetter || firstLetter == oldSearch) {
+    if (firstLetter == " " || firstLetter == oldSearch) {
         return;
     }
     oldSearch = firstLetter;
