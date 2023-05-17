@@ -146,13 +146,21 @@ a:active {
     margin-top: 10px;
     display: flex;
     align-items: center;
-    text-align: center;
+    text-align: start;
     justify-content: space-between;
     background-color: pink;
-    border-radius: 50px;
-    padding: 5px;
+    border-radius: 30px;
+    padding: 3px 10px;
     margin-left: 0;
-    cursor: pointer;
+}
+
+.results-item a {
+    /* max-width: 80%; */
+    /* background-color: blue; */
+    width: 90%;
+    text-decoration: none;
+    display: inline-block;
+    height: 100%;
 }
 
 .results-item span {
