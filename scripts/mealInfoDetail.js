@@ -48,7 +48,40 @@ async function getMealInfoDetail(URL) {
 
 //mealDetail on UI
 function renderMealDetailOnUI(mealDetail) {
+    //show main data on UI
     mealName.innerText = mealDetail.strMeal;
     mealImg.src = mealDetail.strMealThumb;
     mealInstruction.innerText = mealDetail.strInstructions;
+
+    //show other remaining/available data on UI/using loop
+    //first delete/null data that already  render
+    //delete mealDetail.strMeal;
+    mealDetail.strMeal = null;
+    mealDetail.strMealThumb = null;
+    mealDetail.strInstructions = null;
+
+    //......
+    mealDetail.stridMeal = mealDetail.idMeal;
+    delete mealDetail.idMeal;
+
+    for (key in mealDetail) {
+
+        if (mealDetail[key] == null || mealDetail[key] == "") {
+            continue;
+        }
+        let name = key.slice(3);
+        let li = document.createElement('li');
+        let span1 = document.createElement('span');
+        let span2 = document.createElement('span');
+
+        span1.className = 'info-title';
+        span1.innerText = name;
+        span2.innerText = mealDetail[key];
+
+        li.appendChild(span1);
+        li.appendChild(span2);
+        otherInfoUlList.appendChild(li);
+    }
+
+
 }

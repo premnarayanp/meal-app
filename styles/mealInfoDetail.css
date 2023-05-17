@@ -115,7 +115,8 @@ html {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 40px;
+    /* flex-wrap: wrap; */
+    min-height: 50px;
     min-width: 350px;
     padding: 2px 3%;
     background-color: rgb(34, 34, 148);
@@ -124,9 +125,16 @@ html {
 }
 
 #other-informationList li span {
+    /* display: inline-block;
+    height: auto; */
     color: white;
     font-size: 25px;
     font-weight: 700;
     font-family: sans-serif;
     /* text-align: start; */
+    overflow-x: hidden;
+}
+
+#other-informationList .info-title {
+    color: palegoldenrod;
 }
