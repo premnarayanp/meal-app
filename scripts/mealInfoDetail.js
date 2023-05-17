@@ -9,8 +9,11 @@ const mealId = params.get('mealId');
 //URL with mealId
 const URL = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`;
 
-
 let mealName = document.getElementById('meal-name');
+
+if (mealId) {
+    getMealInfoDetail(URL);
+}
 
 //get/fetch detail of meal by mealId
 async function getMealInfoDetail(URL) {
