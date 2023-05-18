@@ -1,14 +1,13 @@
 # meal-app
-#=============================Project Deploy detalil========================================
-#git:- https://github.com/premnarayanp/meal-app.git
+#===Project Deploy detalil===
+#git:-https://github.com/premnarayanp/meal-app.git
+#youtube Link:-https://youtu.be/TXJb4V4eEl4
+#host:-https://premnarayanp.github.io/meal-app/
 
-# youtube video Link:- https://youtu.be/TXJb4V4eEl4
-
-#host:-   https://premnarayanp.github.io/meal-app/
-#=======================Structure:-3 folder===================================================
-#1-pages:- it is html-pages folder.
-#1.1-mealInfoDetail.html:- it show meal idetail. 
-#1.2-myFavorites.html:- it show favorites List.
+#===Structure:-3 folder==
+#1-pages:-it is html-pages folder.
+#1.1-mealInfoDetail.html:-it show meal idetail. 
+#1.2-myFavorites.html:-it show favorites List.
 
 #2-scripts:- this folder contains script file. 
 #2.1-mealInfoDetail.js :-  
@@ -19,7 +18,7 @@
 #3.1-mealInfoDetail.css :-  
 #3.2-myFavorites.css :- 
 #3.3- index.css:-
-#=============================functionality and feature of JS file====================================
+#==functionality and feature of JS file=======
 #1:-index.js:-
 #1.1:-searchByFirstLetter(searchURL) :-search data from meals API ,given first letter.
 #1.2:-renderMealListInHome(meals) :-render related Each meal in homepage <ul> list.
