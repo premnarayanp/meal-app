@@ -1,3 +1,4 @@
+//index.js now completed
 //const url='www.themealdb.com/api/json/v1/1/search.php?f=a'
 const favoritesKey = '_MYFavoritesKey_';
 
