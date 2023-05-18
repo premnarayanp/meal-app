@@ -3,7 +3,9 @@ const favoritesKey = '_MYFavoritesKey_';
 
 const mealUlList = document.getElementById('suggested-meal-list');
 const searchInput = document.getElementById('search-input');
+const searchBtn = document.getElementById('search-btn');
 var oldSearch = "";
+//var oldSearchName = "";
 
 // get change in value of input and event with every change in search input
 searchInput.addEventListener('input', (e) => {
@@ -24,9 +26,11 @@ searchInput.addEventListener('input', (e) => {
 
     const searchURL = `https://www.themealdb.com/api/json/v1/1/search.php?f=${firstLetter}`;
     searchByFirstLetter(searchURL);
+    // searchByFirstLetterOrName(searchURL);
+
 });
 
-// searchByFirstLetter() search data from meals API ,given first letter
+//searchByFirstLetter() search data from meals API ,given first letter
 async function searchByFirstLetter(searchURL) {
 
     try {
@@ -35,12 +39,12 @@ async function searchByFirstLetter(searchURL) {
         const jsonData = await response.json();
         // console.log("json", jsonData);
         const meals = jsonData.meals;
-        // console.log(meals);
+        //console.log(meals);
 
         if (meals == null) {
             const h1 = document.createElement('h1');
             // h1.innerText = "Related Results Note Found";
-            h1.innerText = `Meals Note Found,which name start with ${value}`;
+            h1.innerText = `Meals Note Found,which name start with ${oldSearch}`;
             h1.style = "font-size:30px";
             h1.style = "color:red";
             mealUlList.appendChild(h1);
@@ -151,3 +155,59 @@ function getFavoritesFromLocal(key) {
     //console.log("Meals get successfully");
     return favoritesList;
 }
+
+//search Button clicked
+searchBtn.addEventListener('click', () => {
+    let inputValue = searchInput.value;
+    //console.log('inputValue:-', inputValue);
+    if (!inputValue) {
+        inputValue = searchInput.innerText = "search...";
+        return;
+    }
+    if (inputValue == oldSearch) {
+        return;
+    }
+    //oldSearchName = inputValue;
+    oldSearch = inputValue;
+    mealUlList.innerText = ' ';
+    const searchURL = `https://www.themealdb.com/api/json/v1/1/search.php?s=${inputValue}`;
+    console.log(inputValue);
+    searchMealByName(searchURL);
+    //searchByFirstLetterOrName(searchURL);
+
+});
+
+
+//search a particular meal by name which type in searchbar and click on search button
+async function searchMealByName(searchURL) {
+    try {
+        const response = await fetch(searchURL);
+        // console.log("json", response);
+        const jsonData = await response.json();
+        // console.log("json", jsonData);
+        const meals = jsonData.meals;
+        console.log(meals);
+
+        if (meals == null) {
+            const h1 = document.createElement('h1');
+            // h1.innerText = "Related Results Note Found";
+            h1.innerText = `Meals Note Found,Which name:-  ${oldSearch}`;
+            h1.style = "font-size:30px";
+            h1.style = "color:red";
+            mealUlList.appendChild(h1);
+            return;
+        }
+        renderMealListInHome(meals);
+
+    } catch (error) {
+        const h1 = document.createElement('h1');
+        h1.innerText = error;
+        h1.style = "font-size:30px";
+        h1.style = "color:red";
+        mealUlList.appendChild(h1);
+    }
+
+}
+
+////Because  searchByFirstLetterOrName(searchURL) working same  searchMealByName(searchURL) and
+//// don,t need it,
